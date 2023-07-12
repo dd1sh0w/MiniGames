@@ -79,6 +79,8 @@ int Roulette(int balance) {
 
         std::cout << '\n' << "Now your balance is " << balance << '$' << '\n';
 
+        if (balance <= 0) return balance;
+
         std::cout << "If you want exit enter '1', else enter '0'" << '\n'; // Exit check
         std::cin >> exit;
         if (exit) return balance;
