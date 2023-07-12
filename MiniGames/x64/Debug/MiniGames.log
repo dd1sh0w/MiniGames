@@ -1,0 +1,9 @@
+﻿  Player.cpp
+  RandomNumber.cpp
+D:\Visual\MiniGames\MiniGames\Functions\RandomNumber.cpp(4,15): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+  main.cpp
+  Roulette.cpp
+  RouletteBet.cpp
+  RouletteBetFunctions.cpp
+  Создание кода...
+  MiniGames.vcxproj -> D:\Visual\MiniGames\x64\Debug\MiniGames.exe
