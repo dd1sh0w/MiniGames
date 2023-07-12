@@ -1,14 +1,27 @@
 
 #include <iostream>
+#include <string>
+#include <fstream>
 #include "Roulette/Roulette.h"
 #include "Functions/Player.h"
 
 int main() {
     Player player;
 
-    player.getName();
 
    int numberOfGame;
+   bool resetSave = false;
+
+   std::string pathOfSaveFile = "saves/save.txt";
+
+   std::ofstream fout;
+   std::ifstream fin;
+    
+   player.getName();
+
+   fin.open(pathOfSaveFile);
+   fin.read((char*)&player, sizeof(Player));
+   fin.close();
 
 
    std::cout << "\n\n\nHi,"<< player.name << "!\n";
@@ -32,6 +45,9 @@ int main() {
            default:
                std::cout << '\n' << "Incorrect number!";
        }
+       fout.open(pathOfSaveFile);
+       fout.write((char*)&player, sizeof(Player));
+       fout.close();
        if (player.balance <= 0) {
            std::cout << "\n\t\t\tYou are lose!";
            return 0;
