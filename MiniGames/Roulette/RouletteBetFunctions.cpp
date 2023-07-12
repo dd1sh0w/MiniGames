@@ -1,6 +1,4 @@
-//
-// Created by konus on 11.07.2023.
-//
+
 #include "RouletteBetFunctions.h"
 
 Bet BetCheck (int number, Bet bet) {

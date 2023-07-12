@@ -1,3 +1,4 @@
+
 #include <iostream>
 #include "Roulette/Roulette.h"
 #include "Functions/Player.h"
@@ -12,13 +13,14 @@ int main() {
 
    std::cout << "\n\n\nHi,"<< player.name << "!\n";
    std::cout << "You have a 100$ at the start, but if you lose them, then the game is over \n" <<
-                "But if you reach 1000$ then you will become a winner! \n Good luck! \n";
+                "But if you reach 1000$ then you will become a winner! \n \t\t\t Good luck! \n";
+   std::cout << "\n#############################################################################################\n\n";
 
     while(true) {
-       std::cout << "Your balance is " << player.balance << "$\n";
+       std::cout << "Your balance is " << player.balance << "$\n\n";
        std::cout << "List of the games:\n";
        std::cout << "1. Roulette" << '\n';
-       std::cout << "Enter the number of the desired game(or '0' if you want exit): ";
+       std::cout << "\nEnter the number of the desired game(or '0' if you want exit): ";
        std::cin >> numberOfGame;
        switch (numberOfGame) {
            case 1:
@@ -31,7 +33,7 @@ int main() {
                std::cout << '\n' << "Incorrect number!";
        }
        if (player.balance <= 0) {
-           std::cout << "You are lose!";
+           std::cout << "\n\t\t\tYou are lose!";
            return 0;
        } else {
            if (player.balance >= 1000) {

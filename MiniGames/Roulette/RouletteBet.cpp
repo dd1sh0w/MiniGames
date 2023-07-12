@@ -1,6 +1,3 @@
-//
-// Created by konus on 11.07.2023.
-//
 
 #include "RouletteBet.h"
 
