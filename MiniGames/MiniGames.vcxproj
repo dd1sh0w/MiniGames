@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Functions\Greeting.cpp" />
     <ClCompile Include="Functions\Player.cpp" />
     <ClCompile Include="Functions\RandomNumber.cpp" />
     <ClCompile Include="main.cpp" />
@@ -27,6 +28,7 @@
     <ClCompile Include="Roulette\RouletteBetFunctions.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Functions\Greeting.h" />
     <ClInclude Include="Functions\Player.h" />
     <ClInclude Include="Functions\RandomNumber.h" />
     <ClInclude Include="Roulette\Roulette.h" />
