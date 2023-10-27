@@ -1,4 +1,3 @@
-
 #include <iostream>
 #include "Roulette/Roulette.h"
 #include "Functions/Player.h"
