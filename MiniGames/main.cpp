@@ -5,6 +5,7 @@
 #include "Functions/Greeting.h"
 #include "Roulette/Roulette.h"
 #include "Functions/Player.h"
+#include "Tic-Tac-Toe/Tic-tac-toe.h"
 
 int main() {
     Player player;
@@ -37,10 +38,14 @@ int main() {
     while(true) {
        std::cout << "\n\nYour balance is " << player.balance << "$\n\n";
        std::cout << "List of the games:\n";
-       std::cout << "1. Roulette" << '\n';
+       std::cout << "1. Roulette\n";
+       std::cout << "2. Tic-Tac-Toe\n";
        std::cout << "\nEnter the number of the desired game(or '0' if you want exit): ";
        std::cin >> numberOfGame;
        switch (numberOfGame) {
+           case 2:
+               TicTacToe();
+               break;
            case 1:
                player.balance = Roulette(player.balance);
                break;
