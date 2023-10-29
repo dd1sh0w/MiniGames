@@ -1,36 +1,66 @@
 #include <iostream>
+#include <string>
+#include <fstream>
+#include "Functions/Greeting.h"
 #include "Roulette/Roulette.h"
 #include "Functions/Player.h"
+#include "Tic-Tac-Toe/Tic-tac-toe.h"
 
 int main() {
     Player player;
 
-    player.getName();
 
    int numberOfGame;
+   bool resetSave = true;
 
+   std::string pathOfSaveFile = "save.txt";
 
-   std::cout << "\n\n\nHi,"<< player.name << "!\n";
-   std::cout << "You have a 100$ at the start, but if you lose them, then the game is over \n" <<
-                "But if you reach 1000$ then you will become a winner! \n \t\t\t Good luck! \n";
-   std::cout << "\n#############################################################################################\n\n";
+   std::ofstream fout;
+   std::ifstream fin;
+  
+
+   fin.open(pathOfSaveFile);
+   fin >> resetSave;
+   if (resetSave) {
+       player = Greeting();
+       resetSave = false;
+   }
+   else {
+       while (fin.read((char*)&player, sizeof(Player)));
+   }
+   if (player.balance <= 0) {
+       player = Greeting();
+   }
+   fin.close();
+
 
     while(true) {
-       std::cout << "Your balance is " << player.balance << "$\n\n";
+       std::cout << "\n\nYour balance is " << player.balance << "$\n\n";
        std::cout << "List of the games:\n";
-       std::cout << "1. Roulette" << '\n';
+       std::cout << "1. Roulette\n";
+       std::cout << "2. Tic-Tac-Toe\n";
        std::cout << "\nEnter the number of the desired game(or '0' if you want exit): ";
        std::cin >> numberOfGame;
        switch (numberOfGame) {
+           case 2:
+               TicTacToe();
+               break;
            case 1:
                player.balance = Roulette(player.balance);
                break;
            case 0:
                std::cout << '\n' << "Bye!";
+               fout.open(pathOfSaveFile);
+               fout << resetSave;
+               fout.write((char*)&player, sizeof(Player));
+               fout.close();
                return 0;
            default:
                std::cout << '\n' << "Incorrect number!";
        }
+       fout.open(pathOfSaveFile);
+       fout << resetSave;
+       fout.write((char*)&player, sizeof(Player));
        if (player.balance <= 0) {
            std::cout << "\n\t\t\tYou are lose!";
            return 0;
@@ -45,5 +75,6 @@ int main() {
                }
            }
        }
+       fout.close();
    }
 }

@@ -19,6 +19,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Tic-tac-toe\Tic-tac-toe\functions.cpp" />
+    <ClCompile Include="..\..\Tic-tac-toe\Tic-tac-toe\Tic-tac-toe.cpp" />
+    <ClCompile Include="Functions\Greeting.cpp" />
     <ClCompile Include="Functions\Player.cpp" />
     <ClCompile Include="Functions\RandomNumber.cpp" />
     <ClCompile Include="main.cpp" />
@@ -27,11 +30,14 @@
     <ClCompile Include="Roulette\RouletteBetFunctions.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\Tic-tac-toe\Tic-tac-toe\functions.h" />
+    <ClInclude Include="Functions\Greeting.h" />
     <ClInclude Include="Functions\Player.h" />
     <ClInclude Include="Functions\RandomNumber.h" />
     <ClInclude Include="Roulette\Roulette.h" />
     <ClInclude Include="Roulette\RouletteBet.h" />
     <ClInclude Include="Roulette\RouletteBetFunctions.h" />
+    <ClInclude Include="Tic-Tac-Toe\Tic-tac-toe.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

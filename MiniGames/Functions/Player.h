@@ -11,8 +11,16 @@
 
 class Player {
 public:
-    int balance = 100;
+    int balance;
     std::string name;
+
+    Player() {
+        balance = 100;
+    }
+    Player(std::string Name) {
+        balance = 100;
+        name = Name;
+    }
 
     void getName();
 };
